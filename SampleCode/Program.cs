@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace SampleCode
 {
@@ -52,6 +51,18 @@ namespace SampleCode
             Console.WriteLine(romanNumerals.ConvertToRomanNumerals(5000));
             Console.WriteLine(romanNumerals.ConvertToRomanNumerals(35));
             */
+
+            //PriorityLinkedList
+            /*var list = new PriorityLinkedList(new Node { Value = 1, Priority = 3 });
+            list.PushPriorityNode(new Node { Value = 2, Priority = 2 });
+            list.PushPriorityNode(new Node { Value = 4, Priority = 10 });
+            list.PushPriorityNode(new Node { Value = 10, Priority = 4 });
+            list.LogPriorityLinkedList();
+            list.PeekPriorityNode();*/
+
+            //SortedArray
+            /*var arrayActions = new ArrayActions();
+            arrayActions.FindMedianOfSortedArrays(new IntArray("3,1,2").SortedArray, new IntArray("1,2,3").SortedArray);*/
         }
     }
 }

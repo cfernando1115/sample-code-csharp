@@ -43,16 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SortedArray\ArrayActions.cs" />
+    <Compile Include="ClockAngle\Angle.cs" />
     <Compile Include="ClockAngle\Clock.cs" />
     <Compile Include="Fibonacci\Fibonacci.cs" />
     <Compile Include="LinkedList\LinkedList.cs" />
+    <Compile Include="LinkedList\Node.cs" />
+    <Compile Include="LinkedList\PriorityLinkedList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RomanNumerals\RomanNumerals.cs" />
+    <Compile Include="SortedArray\SortedArray.cs" />
     <Compile Include="TwoNumbers\TwoNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
