@@ -4,10 +4,10 @@ using NUnit.Framework;
 namespace SampleCode.UnitTests
 {
     [TestFixture]
-    public class RomanNumeralsTests
+    public class SortedArrayTests
     {
         [Test]
-        public void ConvertToRomanNumerals_NumberOutOfRange_OutOfRangeResponse()
+        public void TestMethod1()
         {
         }
     }

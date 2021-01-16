@@ -1,7 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using System.Threading.Tasks;
+using System;
 
 namespace SampleCode
 {
+
+
     class Program
     {
         static void Main(string[] args)
@@ -63,6 +69,54 @@ namespace SampleCode
             //SortedArray
             /*var arrayActions = new ArrayActions();
             arrayActions.FindMedianOfSortedArrays(new IntArray("3,1,2").SortedArray, new IntArray("1,2,3").SortedArray);*/
+
+            //BinarySearch
+            /*var node1 = new Node { Key = 1 };
+            var node2 = new Node { Key = 2 };
+            var node3 = new Node { Key = 3 };
+            var node4 = new Node { Key = 4 };
+            var node5 = new Node { Key = 5 };
+
+            node4.Left = node2;
+            node4.Right = node5;
+            node2.Left = node1;
+            node2.Right = node3;
+
+            //var binaryTree = new BinarySearchTree(node4);
+            //binaryTree.InsertNode(new Node { Key = 6 });
+            //binaryTree.InorderTraversal();
+
+            var node6 = new BinaryNode(6);
+            var node2 = new BinaryNode(2);
+            var node1 = new BinaryNode(1);
+            var node3 = new BinaryNode(3);
+            var node11 = new BinaryNode(11);
+            var node9 = new BinaryNode(9);
+            var node13 = new BinaryNode(13);
+            var node15 = new BinaryNode(15);
+            var node16 = new BinaryNode(16);
+            var node10 = new BinaryNode(10);
+
+            var binaryTree = new BinarySearchTree(node6);
+            //InsertNode()
+            binaryTree.InsertNode(node2);
+            binaryTree.InsertNode(node11);
+            binaryTree.InsertNode(node1);
+            binaryTree.InsertNode(node3);
+            binaryTree.InsertNode(node9);
+            binaryTree.InsertNode(node13);
+            binaryTree.InsertNode(node15);
+            binaryTree.InsertNode(node16);
+            binaryTree.InsertNode(node10);
+
+            //binaryTree.InorderTraversal();
+
+            var node12 = new BinaryNode(12);
+            //InsertNode()
+            binaryTree.InsertNode(node12);
+            //DeleteNode()
+            binaryTree.DeleteNode(node11);*/
         }
+
     }
 }

@@ -9,6 +9,7 @@ namespace SampleCode
 
         public IntArray(string numbers)
         {
+            //Sorts string of comma-separated numbers
             SortedArray = numbers.Split(',')
                 .Select(n => Convert.ToInt32(n))
                 .OrderBy(n=>n)

@@ -8,7 +8,7 @@ namespace SampleCode
     {
         public Node Head;
 
-        public LinkedList(Node head)
+        public LinkedList(Node head=null)
         {
             Head = head;
         }
@@ -29,7 +29,7 @@ namespace SampleCode
         }
         public void LogNodeList()
         {
-            if (IsListCircular())
+            if (HasCycle())
             {
                 var nodeList = new List<Node>();
                 nodeList.Add(Head);
@@ -63,11 +63,16 @@ namespace SampleCode
             }
         }
 
-        public void RemoveNodeFromList(Node node)
+        public int RemoveNodeFromList(Node node)
         {
+            if (Head == null)
+            {
+                return -1;
+            }
             if (Head == node)
             {
                 Head=Head.Next;
+                return 1;
             }
             else
             {
@@ -77,15 +82,20 @@ namespace SampleCode
                     if (curNode.Next == node)
                     {
                         curNode.Next = node.Next;
-                        break;
+                        return 1;
                     }
                     curNode = curNode.Next;
                 }
+                return -1;
             }
         }
 
-        public bool IsListCircular()
+        public bool HasCycle()
         {
+            if (Head == null)
+            {
+                return false;
+            }
             var nodeList = new List<Node>();
             nodeList.Add(Head);
             var curNode = Head;
