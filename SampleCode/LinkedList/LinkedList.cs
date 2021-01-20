@@ -7,6 +7,13 @@ namespace SampleCode
     public class LinkedList
     {
         public Node Head;
+        private string _message;
+        private ILogger _logger;
+
+        public LinkedList(ILogger logger)
+        {
+            _logger = logger;
+        }
 
         public LinkedList(Node head=null)
         {
@@ -14,6 +21,10 @@ namespace SampleCode
         }
         public void AddNodeToEnd(Node newNode)
         {
+            if (Head == null)
+            {
+                Head = newNode;
+            }
             var curNode = Head;
             while (curNode.Next != null)
             {
@@ -24,7 +35,10 @@ namespace SampleCode
 
         public void AddNodeToStart(Node newNode)
         {
-            newNode.Next = Head;
+            if (Head!= null)
+            {
+                newNode.Next = Head;
+            }
             Head = newNode;
         }
         public void LogNodeList()
@@ -63,16 +77,17 @@ namespace SampleCode
             }
         }
 
-        public int RemoveNodeFromList(Node node)
+        public void RemoveNodeFromList(Node node)
         {
             if (Head == null)
             {
-                return -1;
+                _message="List is empty";
+                _logger.Log(_message);
+                return;
             }
             if (Head == node)
             {
                 Head=Head.Next;
-                return 1;
             }
             else
             {
@@ -82,11 +97,11 @@ namespace SampleCode
                     if (curNode.Next == node)
                     {
                         curNode.Next = node.Next;
-                        return 1;
                     }
                     curNode = curNode.Next;
                 }
-                return -1;
+                _message="Node does not exist in list";
+                _logger.Log(_message);
             }
         }
 

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BinarySearch\BinaryNode.cs" />
     <Compile Include="BinarySearch\BinarySearchTree.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="SortedArray\ArrayActions.cs" />
     <Compile Include="ClockAngle\Angle.cs" />
     <Compile Include="ClockAngle\Clock.cs" />

@@ -5,10 +5,12 @@ namespace SampleCode
     public class PriorityLinkedList
     {
         public Node Head;
+        private string _message;
+        private ILogger _logger;
 
-        public PriorityLinkedList(Node node)
+        public PriorityLinkedList(ILogger logger)
         {
-            Head = node;
+            _logger = logger;
         }
 
         public void PushPriorityNode(Node newNode)
@@ -21,7 +23,7 @@ namespace SampleCode
             else
             {
                 var curNode = Head;
-                while (curNode.Next != null && curNode.Next.Priority < newNode.Priority)
+                while (curNode.Next != null && curNode.Next.Priority <= newNode.Priority)
                 {
                     curNode = curNode.Next;
                 }
@@ -33,14 +35,22 @@ namespace SampleCode
 
         public void PopPriorityNode()
         {
-            var temp = Head;
-            Head = Head.Next;
-            Console.WriteLine("Popped Highest Priority Node = Value: {0}, Priority: {1}", temp.Value, temp.Priority);
+            if (Head == null)
+            {
+                _message = "List is empty";
+            }
+            else
+            {
+                var temp = Head;
+                Head = Head.Next;
+                _message = "Popped Highest Priority Node = Value: " + temp.Value + ", Priority: " + temp.Priority;
+            }
+            _logger.Log(_message);
         }
 
         public void PeekPriorityNode()
         {
-            Console.WriteLine("Highest Priority Node = Value: {0}, Priority: {1}", Head.Value, Head.Priority);
+            _message="Highest Priority Node = Value: " + Head.Value + ", Priority: " + Head.Priority; 
         }
 
         public void LogPriorityLinkedList()
