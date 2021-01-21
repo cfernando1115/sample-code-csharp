@@ -73,7 +73,7 @@
     <Compile Include="TwoNumbersTests.cs" />
     <Compile Include="RomanNumeralsTests.cs" />
     <Compile Include="FibonacciTests.cs" />
-    <Compile Include="ClockAngleTests.cs" />
+    <Compile Include="ClockAngleTests\ClockTests.cs" />
     <Compile Include="SortedArrayTests.cs" />
     <Compile Include="BinarySearchTests.cs" />
   </ItemGroup>
