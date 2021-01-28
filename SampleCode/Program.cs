@@ -10,6 +10,7 @@ namespace SampleCode
     {
         static void Main(string[] args)
         {
+
         }
 
     }

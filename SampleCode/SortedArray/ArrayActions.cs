@@ -4,10 +4,9 @@ namespace SampleCode
 {
     public class ArrayActions
     {
-        public void FindMedianOfSortedArrays(int[] arr1,int[] arr2)
+        public float FindMedianOfSortedArrays(int[] arr1,int[] arr2)
         {
             var sortedArray = new int[arr1.Length + arr2.Length];
-
             var i = 0;
             var y = 0;
             var k = 0;
@@ -47,17 +46,16 @@ namespace SampleCode
             //Determine if array has an odd or even number of elements to find median
             var sortedArrayLength = sortedArray.Length;
             var mid = sortedArrayLength / 2;
+            float median;
             if (sortedArrayLength % 2 == 0)
             {
-                //Convert to double to account for division of two elements
-                var median = ((double)sortedArray[mid] + sortedArray[mid - 1]) / 2;
-                Console.WriteLine(median);
+                median = ((float)sortedArray[mid] + sortedArray[mid - 1]) / 2;
             }
             else
             {
-                var median = sortedArray[mid];
-                Console.WriteLine(median);
+                median = sortedArray[mid];
             }
+            return median;
 
         }
     }
