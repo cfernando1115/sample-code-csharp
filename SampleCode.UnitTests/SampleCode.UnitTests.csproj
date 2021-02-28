@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClockAngleTests\AngleTests.cs" />
     <Compile Include="LinkedList\LinkedListTests.cs" />
     <Compile Include="LinkedList\PriorityLinkedListTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
