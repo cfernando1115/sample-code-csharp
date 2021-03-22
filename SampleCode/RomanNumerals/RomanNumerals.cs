@@ -34,7 +34,6 @@ namespace SampleCode
 
         public string ConvertToRomanNumerals(int number)
         {
-
             //Validate number
             if (ValidateNumber(number))
             {

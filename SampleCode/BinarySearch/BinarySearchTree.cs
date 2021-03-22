@@ -10,9 +10,11 @@ namespace SampleCode
     {
         public BinaryNode Root;
         public Stack<BinaryNode> Stack = new Stack<BinaryNode>();
-        public BinarySearchTree(BinaryNode root)
+        private ILogger _logger;
+        public BinarySearchTree(BinaryNode root, ILogger logger)
         {
             Root = root;
+            _logger = logger;
         }
 
         public void InsertNode(BinaryNode node)
@@ -27,7 +29,7 @@ namespace SampleCode
             {
                 if (curNode.Key == node.Key)
                 {
-                    Console.WriteLine("Node key is a duplicate.");
+                    _logger.Log("Node key is a duplicate.");
                     break;
                 }
                 while (curNode.Key > node.Key && curNode.Left != null)
@@ -55,7 +57,7 @@ namespace SampleCode
         {
             if (Root == null)
             {
-                Console.WriteLine("Tree is empty.");
+                _logger.Log("Tree is empty.");
                 return;
             }
             var curNode = Root;
@@ -74,7 +76,7 @@ namespace SampleCode
                 }
                 if (curNode == null)
                 {
-                    Console.WriteLine("Node does not exist in tree.");
+                    _logger.Log("Node does not exist in tree.");
                     return;
                 }
                 if (curNode == node)
@@ -94,7 +96,7 @@ namespace SampleCode
         {
             if (Root == null)
             {
-                Console.WriteLine("Tree is empty.");
+                _logger.Log("Tree is empty.");
                 return;
             }
             var curNode = Root;
@@ -113,7 +115,7 @@ namespace SampleCode
                 }
 
                 curNode = Stack.Pop();
-                Console.WriteLine(curNode.Key);
+                _logger.Log(curNode.Key.ToString());
                 curNode = curNode.Right;
             }
         }
