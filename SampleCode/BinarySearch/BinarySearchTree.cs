@@ -64,30 +64,58 @@ namespace SampleCode
             var parent = Root;
             while (true)
             {
-                if (curNode.Key < node.Key)
-                {
-                    parent = curNode;
-                    curNode = curNode.Right;
-                }
-                if (curNode.Key > node.Key)
-                {
-                    parent = curNode;
-                    curNode = curNode.Left;
-                }
                 if (curNode == null)
                 {
                     _logger.Log("Node does not exist in tree.");
                     return;
                 }
+
+                if (curNode.Key < node.Key)
+                {
+                    parent = curNode;
+                    curNode = curNode.Right;
+                    continue;
+                }
+
+                if (curNode.Key > node.Key)
+                {
+                    parent = curNode;
+                    curNode = curNode.Left;
+                    continue;
+                }
+
                 if (curNode == node)
                 {
+                    if(curNode.Right == null && curNode.Left == null)
+                    {
+                        if (curNode == Root)
+                        {
+                            Root = null;
+                            return;
+                        }
+
+                        if (parent.Right == curNode)
+                        {
+                            parent.Right = null;
+                        }
+
+                        if (parent.Left == curNode)
+                        {
+                            parent.Left = null;
+                        }
+                    }
+
                     if (curNode.Right != null)
                     {
                         parent.Right = curNode.Right;
                     }
-                    InsertNode(curNode.Left);
-                    break;
 
+                    if (curNode.Left != null)
+                    {
+                        InsertNode(curNode.Left);
+                    }
+
+                    break;
                 }
             }
         }
